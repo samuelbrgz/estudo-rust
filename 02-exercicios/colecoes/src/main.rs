@@ -49,26 +49,21 @@ impl Colecao for Fila {
         resultado
     }
 }
+fn testar(colecao: &mut impl Colecao) {
+    colecao.adicionar(20);
+    colecao.adicionar(30);
+    colecao.adicionar(40);
+    colecao.adicionar(50);
+    colecao.remover();
+    colecao.remover();
+    colecao.remover();
+    colecao.remover();
+}
 
 fn main() {
     let mut fila = Fila { itens: Vec::new() };
     let mut pilha = Pilha { itens: Vec::new() };
 
-    pilha.adicionar(20);
-    pilha.adicionar(30);
-    pilha.adicionar(40);
-    pilha.adicionar(50);
-    pilha.remover();
-    pilha.remover();
-    pilha.remover();
-    pilha.remover();
-
-    fila.adicionar(20);
-    fila.adicionar(30);
-    fila.adicionar(40);
-    fila.adicionar(50);
-    fila.remover();
-    fila.remover();
-    fila.remover();
-    fila.remover();
+    testar(&mut fila);
+    testar(&mut pilha);
 }
